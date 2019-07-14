@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 using Immovable.Models;
+using Immovable.Services;
 
 namespace Immovable
 {
@@ -34,6 +35,9 @@ namespace Immovable
             services.AddSingleton<IImmovableStoreDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<ImmovableStoreDatabaseSettings>>().Value
             );
+
+            services.AddSingleton<PropertyService>();
+            services.AddSingleton<LessorService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using Immovable.Models;
+
 namespace Immovable
 {
     public class Startup
@@ -25,6 +27,14 @@ namespace Immovable
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ImmovableStoreDatabaseSettings>(
+                Configuration.GetSection(nameof(ImmovableStoreDatabaseSettings))
+            );
+
+            services.AddSingleton<IImmovableStoreDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<ImmovableStoreDatabaseSettings>>().Value
+            );
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

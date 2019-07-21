@@ -17,11 +17,19 @@ jobs:
           name: Building Application
           command:
             dotnet build
-      - run:
-          name: Starting Application
-          command: 
-            dotnet run
-      - run:
-          name: Stop Building
-          command:
-            circleci-agent step halt
+      # - run:
+      #     name: Starting Application
+      #     command: 
+      #       dotnet run
+      # - run:
+      #     name: Stop Building
+      #     command:
+      #       circleci-agent step halt
+workflows:
+  version: 2
+  develop:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master       # only run builds when a push on master branch happens

@@ -33,7 +33,6 @@ namespace Immovable.Controllers
             _lessorService.Create(lessor);
 
             return lessor;
-            //CreatedAtRoute("GetLessor", new { id = lessor.lessorId.ToString() }, lessor);
         }
 
         [HttpPatch("{id:length(24)}")]

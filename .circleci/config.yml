@@ -21,3 +21,7 @@ jobs:
           name: Starting Application
           command: 
             dotnet run
+      - run:
+          name: Stop Building
+          command:
+            circleci-agent step halt

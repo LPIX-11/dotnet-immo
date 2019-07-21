@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Cleaning Application
           command:
-            dotet clean
+            dotnet clean
       - run:
           name: Building Application
           command:

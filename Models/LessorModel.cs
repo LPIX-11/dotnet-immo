@@ -9,28 +9,28 @@ namespace Immovable.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string lessorId { get; set; }
 
-        [BsonElement("Civility")]
+        [BsonElement("lessorCivility")]
         public string lessorCivility { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("lessorName")]
         public string lessorName { get; set; }
 
-        [BsonElement("Surname")]
+        [BsonElement("lessorSurname")]
         public string lessorSurname { get; set; }
 
-        [BsonElement("Email")]
+        [BsonElement("lessorEmail")]
         public string lessorEmail { get; set; }
 
-        [BsonElement("phone")]
+        [BsonElement("lessorphone")]
         public string lessorPhone { get; set; }
 
-        [BsonElement("NIC")]
+        [BsonElement("lessorNIC")]
         public string lessorNIC { get; set; }
 
-        [BsonElement("Adress")]
+        [BsonElement("lessorAdress")]
         public string lessorAdress { get; set; }
 
-        [BsonElement("Type")]
+        [BsonElement("lessorType")]
         public string lessorType { get; set; }
 
     }

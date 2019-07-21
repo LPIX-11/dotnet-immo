@@ -38,6 +38,7 @@ namespace Immovable
 
             services.AddSingleton<PropertyService>();
             services.AddSingleton<LessorService>();
+            services.AddSingleton<CustomerService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -14,7 +14,7 @@ namespace Immovable.Services
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _lessors = database.GetCollection<Lessor>(settings.ImmovableCollectionName);
+            _lessors = database.GetCollection<Lessor>(settings.ImmovableCollectionName = "LessorCollection");
         }
 
         public List<Lessor> Get() => _lessors.Find(lessor => true).ToList();

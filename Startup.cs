@@ -39,6 +39,15 @@ namespace Immovable
             services.AddSingleton<PropertyService>();
             services.AddSingleton<LessorService>();
             services.AddSingleton<CustomerService>();
+            services.AddSingleton<Contract>();
+            services.AddSingleton<Payment>();
+            services.AddSingleton<PaymentType>();
+            services.AddSingleton<Year>();
+            services.AddSingleton<Month>();
+            services.AddSingleton<YearMonth>();
+            services.AddSingleton<YearMonthPayment>();
+            services.AddSingleton<Picture>();
+
 
             services.AddMvc()
             .AddJsonOptions(options => options.UseMemberCasing())

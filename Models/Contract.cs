@@ -13,7 +13,7 @@ namespace Immovable.Models
         [BsonRepresentation(BsonType.DateTime)]
         [BsonElement("contractDate")]
         [JsonProperty("contractDate")]
-        public BsonTimestamp contractDate { get; set; }
+        public BsonDateTime contractDate { get; set; }
 
         [BsonElement("contractCaution")]
         [JsonProperty("contractCaution")]

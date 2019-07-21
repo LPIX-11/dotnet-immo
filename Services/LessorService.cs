@@ -27,6 +27,11 @@ namespace Immovable.Services
             return lessor;
         }
 
+        public void Update(string id, Lessor lessorIn)
+        {
+            _lessors.ReplaceOneAsync(lessor => lessor.lessorId == id, lessorIn);
+        }
+
         public void Remove(string id)
         {
             _lessors.DeleteOne(lessor => lessor.lessorId == id);

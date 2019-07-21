@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
 
 namespace Immovable.Models
 {
@@ -10,6 +11,7 @@ namespace Immovable.Models
         public string pictureId { get; set; }
 
         [BsonElement("Path")]
+        [JsonProperty("Path")]
         public string picturePath { get; set; }
     }
 }

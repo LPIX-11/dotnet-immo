@@ -1,2 +1,3 @@
 # Back-End GesImmo .NetCore Version
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6a1e97f6160b439aaa9bb8cefcb260e4)](https://app.codacy.com/app/LPIX-11/dotnet-immo?utm_source=github.com&utm_medium=referral&utm_content=LPIX-11/dotnet-immo&utm_campaign=Badge_Grade_Settings)
 [![CircleCI](https://circleci.com/gh/LPIX-11/dotnet-immo/tree/master.svg?style=svg)](https://circleci.com/gh/LPIX-11/dotnet-immo/tree/master)

@@ -9,29 +9,29 @@ namespace Immovable.Controllers
     [ApiController]
     public class YearMonthPaymentController : ControllerBase
     {
-        private YearMonthPaymentService _yearMonthPaymentService;
+        private YearMonthPaymentService _yearMonthPayments;
 
         public YearMonthPaymentController(YearMonthPaymentService yearMonthPaymentService)
         {
-            _yearMonthPaymentService = yearMonthPaymentService;
+            _yearMonthPayments = yearMonthPaymentService;
         }
 
         [HttpGet]
-        public ActionResult<List<YearMonthPayment>> Get() => _yearMonthPaymentService.Get();
+        public ActionResult<List<YearMonthPayment>> Get() => _yearMonthPayments.Get();
 
         [HttpGet("{id:length(24)}")]
-        public ActionResult<YearMonthPayment> GetyearMonthPayment(string id)
+        public ActionResult<YearMonthPayment> GetYearMonthPayment(string id)
         {
-            var yearMonthPayment = _yearMonthPaymentService.Get(id);
+            var property = _yearMonthPayments.Get(id);
 
-            return (yearMonthPayment == null) ? null : yearMonthPayment;
+            return (property == null) ? null : property;
         }
 
 
         [HttpPost]
         public ActionResult<YearMonthPayment> Create(YearMonthPayment yearMonthPayment)
         {
-            _yearMonthPaymentService.Create(yearMonthPayment);
+            _yearMonthPayments.Create(yearMonthPayment);
 
             return yearMonthPayment;
         }
@@ -39,14 +39,14 @@ namespace Immovable.Controllers
         [HttpPatch("{id:length(24)}")]
         public IActionResult Update(string id, [FromBody] YearMonthPayment yearMonthPaymentIn)
         {
-            var yearMonthPayment = _yearMonthPaymentService.Get(id);
+            var yearMonthPayment = _yearMonthPayments.Get(id);
 
             if (yearMonthPayment == null)
             {
                 return NotFound();
             }
 
-            _yearMonthPaymentService.Update(id, yearMonthPaymentIn);
+            _yearMonthPayments.Update(id, yearMonthPaymentIn);
 
             return NoContent();
         }
@@ -54,14 +54,14 @@ namespace Immovable.Controllers
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
-            var yearMonthPayment = _yearMonthPaymentService.Get(id);
+            var yearMonthPayment = _yearMonthPayments.Get(id);
 
             if (yearMonthPayment == null)
             {
                 return NotFound();
             }
 
-            _yearMonthPaymentService.Remove(yearMonthPayment.yearMonthPaymentId);
+            _yearMonthPayments.Remove(yearMonthPayment.yearMonthPaymentId);
 
             return NoContent();
         }

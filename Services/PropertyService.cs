@@ -14,7 +14,8 @@ namespace Immovable.Services
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _properties = database.GetCollection<Property>(settings.ImmovableCollectionName = "PropertyCollection");
+            settings.ImmovableCollectionName = "PropertyCollection";
+            _properties = database.GetCollection<Property>(settings.ImmovableCollectionName);
         }
 
         public List<Property> Get() => _properties.Find(property => true).ToList();

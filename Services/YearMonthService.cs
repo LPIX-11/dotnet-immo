@@ -14,7 +14,8 @@ namespace Immovable.Services
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _yearMonths = database.GetCollection<YearMonth>(settings.ImmovableCollectionName = "YearMonthCollection");
+            settings.ImmovableCollectionName = "YearMonthCollection";
+            _yearMonths = database.GetCollection<YearMonth>(settings.ImmovableCollectionName);
         }
 
         public List<YearMonth> Get() => _yearMonths.Find(yearMonth => true).ToList();
